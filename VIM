@@ -1,0 +1,86 @@
+2.1 vim 使用
+
+* I/A  → 当前行 首/尾 插入
+* o/O, p/P → 在当前行 后/前 插入,粘贴 一个新行
+* cw → 替换从光标所在位置后到一个单词结尾的字符
+* “_d/x 不复制的删除, r 替换字符不进入插入模式
+
+简单的移动光标
+* 0 → 数字零，到行头
+* ^ → 到本行第一个不是blank字符的位置
+* $ → 到本行行尾
+* g_ → 到本行最后一个不是blank字符的位置。
+* NG → 到第 N 行 , gg → 到第一行, G 最后一行
+* bB / eE/ wW : 单词的开头/结尾/下一个. W/E(空格分割)
+* <C-fde> <C-buy> 向下/上 翻页
+* % : 匹配括号移动，包括 (, {, [
+* * 和 #:  匹配光标当前所在的单词
+* f/t F/T, 向后(前)移动到指定字符上(f),字符前(t)， 2fa: 右边第二个a上，dt”:删除直到“
+* Z-Return . - 将当前行设置为屏幕顶/中/底
+* H M L  光标移动到屏幕的 顶/中/底
+
+跳转
+* C-], C-t/C-o 函数跳转及返回
+* [[ / ]]  : 前/后 一个函数的开始处{  ; [] / ][ : 前/后 一个函数的 结尾处}
+* [{ / ]} : 包围当前{…}的 开始/结束 . ( ) { } : 前/后一个语句/段落
+* gD
+
+Undo/Redo 补全
+* u → undo; <C-r> → redo
+* [C-n/p]
+ssjk
+打开/保存/退出/改变文件(Buffer)
+* :e <path/to/file> → 打开一个文件
+* :saveas <path/to/file> → 另存为 <path/to/file>
+* :bn 和 :bp → 你可以同时打开很多文件，使用这两个命令来切换下一个或上一个文件。
+
+其他
+* → (小数点) 可以重复上一次的命令
+* N<command> → 重复某个命令N次
+* 0y$ 从0拷贝到$: d→删除, v→选择, gU/gu→大小写
+* :noh 取消高亮
+
+区域选择 <action>a<object> 或 <action>i<object>
+* vi( :选择()内部的，不包括(), va( 选择包括 ()
+* v2a : 2层括号
+* 自动提示: <C-n>   <C-p>
+
+可视化选择
+* (C-v)/v/V : 缩进: <,>,=  . J 连成一行
+* 块操作: 0/^ <C-v> <调整光标> I/A abc [ESC] : 插入/尾部插入iuuuuuu
+
+分屏
+* :sp filename, :vsp 
+* (C-w) s/v 当前文件分屏；  (C-w) lhkj/w 移动到其他屏
+* (C-w) <> 调整分屏大小, | - + =;  或:vertical res 88
+
+查找/替换
+* :[range]s/pattern/string/cgi ; c询问，g行所有不询问，i 忽略大小写
+* 范围: %s 全文， 1,100s 从1到100行
+
+合并行(Normal) shift+j
+
+
+
+
+
+2.2 vim 插件
+
+:PluginInstall, :PluginInstall, :PluginUpdate
+
+Linux下输入:
+ctags -R .
+cscope -Rbq
+	cs show
+	cs find c xxx
+	cw 打开小窗口
+
+
+ctag : 
+* TlistOpen 打开函数列表
+* UpdateTypesFile 更新tags
+
+NERDTree  目录树:
+* o 打开
+
+
