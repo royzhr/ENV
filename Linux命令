@@ -1,0 +1,74 @@
+1.1 Linux命令
+
+压缩：tar -zcvf test.tar.gz test
+解压：tar -zxvf file.tar.gz
+
+
+命令行
+	[C-l] clear
+	[C-a/e] 光标到行头/尾 
+	[C-u/k] 删除光标 前/后 的字符
+	[C     -b/f]  光标移动一个字符
+	[Esc - b/f] 光标移动一个词
+	[Esc - d] 移除光标后的一个词
+	[C    -w]  移除光标前的一个词
+	[C    - y] undo
+
+搜索
+	grep -nr "SOCK_STREAM"  --include "*.h"  /usr/include/
+
+	find . -name “*.swp”
+
+
+
+strace  ip addr ls > 1.txt 2>&1
+strace -e trace=socket ip addr ls
+
+
+查看子进程： ps -eLf|grep 3064   
+			pstree -p 3064	yum install psmisc
+
+
+
+
+3.1 gdb
+
+
+输出美观:  set print pretty on
+数组:	 p *array@100
+内存：	x/80xb var
+
+
+gdb -args   ./objs/nginx -c conf/demo_44_ngx.conf
+
+
+set follow-fork-mode child
+
+set detach-on-fork off
+
+
+
+
+
+3.2 git
+git push origin sdwan:sdwan
+
+git branch -r
+git branch -a
+
+git checkout 
+
+
+
+4.1 网络工具
+
+curl -v http://127.0.0.1 输出详细信息
+
+ping 10.1.2.6 -i 0.01
+
+
+ss -ltnp -4 sport = :80 | grep LIS
+
+网络配置:  /etc/sysconfig/network-scripts/ifcfg-
+
+
