@@ -1,0 +1,26 @@
+安装 测试
+
+
+CFLAGS="-g -O0" ./configure --prefix=/usr/local/nginx
+
+./configure --add-module=/root/module/hello --with-debug
+
+./configure --add-module=/home/src/module/demo --with-stream --with-debug
+
+
+./configure --add-module=/home/src/nginx/module/l3acc_nginx/mod_l3acc_7 --add-module=/home/src/nginx/module/l3acc_nginx/mod_l3acc_4 --add-module=/home/src/nginx/module/other/echo-nginx-module --with-stream --with-debug
+
+
+./configure --add-module=/home/src/module/mod_l3acc_7 --add-module=/home/src/module/mod_l3acc_4 --with-stream --with-debug
+
+
+
+
+前台运行 : gdb -args   ./objs/nginx -c conf/demo_acc_7_ngx.conf
+gdb -args   ./objs/nginx -c conf/demo_44_ngx.conf
+
+
+
+Memcached:
+memcached -p 11111 -m 64m -v -u root
+
